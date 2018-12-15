@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<parameters>
+
+    <!-- Connection details -->
+    <dbtype>voltdb</dbtype>
+    <driver>org.voltdb.jdbc.Driver</driver>
+    <DBUrl>jdbc:voltdb://tem71:21212</DBUrl>
+    <username>nafseer</username>
+    <password>cs848@uw</password>
+    <isolation>TRANSACTION_SERIALIZABLE</isolation>
+ 
+    <!-- Scalefactor increases the number of subscribers -->
+    <scalefactor>10</scalefactor>
+    
+    <!-- The workload -->
+    <terminals>36</terminals>
+    <works>
+        <work>
+            <warmup>120</warmup>
+            <time>300</time>
+            <rate>100000</rate>
+            <weights>0, 42, 15, 43, 0, 0, 0</weights>
+        </work>
+    </works>
+  
+	<!-- Twitter Procedures declaration -->
+    <transactiontypes>
+        <transactiontype>
+                <name>DeleteCallForwarding</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetAccessData</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetNewDestination</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetSubscriberData</name>
+        </transactiontype>
+        <transactiontype>
+                <name>InsertCallForwarding</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateLocation</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateSubscriberData</name>
+        </transactiontype>
+    </transactiontypes>
+</parameters>

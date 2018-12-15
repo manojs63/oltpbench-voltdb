@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<parameters>
+
+    <!-- Connection details -->
+    <dbtype>memsql</dbtype>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <DBUrl>jdbc:mysql://ugster07.student.cs.uwaterloo.ca:3306/testdb</DBUrl>
+    <username>nafseer</username>
+    <password>cs848@uw</password>
+    <isolation>TRANSACTION_SERIALIZABLE</isolation>      
+  
+    <!-- Scalefactor increases the number of subscribers -->
+    <scalefactor>100</scalefactor>
+    
+    <!-- The workload -->
+    <terminals>48</terminals>
+    <works>
+        <work>
+            <time>900</time>
+            <rate>10000</rate>
+            <weights>0, 42, 15, 43, 0, 0, 0</weights>
+        </work>
+    </works>
+  
+	<!-- Twitter Procedures declaration -->
+    <transactiontypes>
+        <transactiontype>
+                <name>DeleteCallForwarding</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetAccessData</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetNewDestination</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetSubscriberData</name>
+        </transactiontype>
+        <transactiontype>
+                <name>InsertCallForwarding</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateLocation</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateSubscriberData</name>
+        </transactiontype>
+    </transactiontypes>
+</parameters>
